@@ -1,1 +1,1 @@
-# pycon-sk-mongodb-workshop
+# MongoDB workshop at PyCon 2018
