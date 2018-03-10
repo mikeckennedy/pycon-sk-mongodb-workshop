@@ -3,9 +3,9 @@
 Recommended version is via Home Brew
 
 * Install homebrew at [brew.sh](http://brew.sh) 
-* brew install mongodb
+* `brew install mongodb`
 * Start MongoDB
-* mongod --config /usr/local/etc/mongod.conf
+* `mongod --config /usr/local/etc/mongod.conf`
 
 See MongoDB's full instructions at:
 
