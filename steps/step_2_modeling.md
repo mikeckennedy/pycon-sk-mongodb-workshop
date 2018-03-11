@@ -12,6 +12,19 @@ Consider how you would model this data in a document database.
 
 The primary question is whether to embed a relationship or to create a foreign key like relationship. The best indicator of which way to go here is the question: "*Is the embedded data wanted 80% of the time?*". 
 
+Create your model as a simple text document. For example, here is one partial model:
 
+```
+Package:
+* name: str
+* version: str
+* history: list
+
+User:
+* name
+* email
+
+...
+```
 
 
