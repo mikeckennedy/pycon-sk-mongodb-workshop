@@ -2,6 +2,8 @@
 import time
 
 # noinspection PyUnresolvedReferences
+import pymongo
+
 from data import mongo_setup
 from data.test_data import TestDownload, TestThing
 from services.package_service import PackageService
@@ -20,6 +22,7 @@ def main():
     # td.save()
 
     print_header()
+    print_direct()
     print_covered()
     input_loop()
 
@@ -122,6 +125,17 @@ def print_covered():
     counter = len(releases)
     t1 = time.time()
     print(counter, (t1-t0)*1000, 'ms')
+
+
+def print_direct():
+    client = pymongo.MongoClient()
+
+    db = client.pypi
+    coll = db.release_history
+
+    covered = coll.find( {'health.coverage': {"$gte": .999}}  )
+
+    print("Raw downloads: {:,}".format(coll.count()))
 
 
 if __name__ == '__main__':
