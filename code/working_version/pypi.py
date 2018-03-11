@@ -3,11 +3,22 @@ import time
 
 # noinspection PyUnresolvedReferences
 from data import mongo_setup
+from data.test_data import TestDownload, TestThing
 from services.package_service import PackageService
 
 
 def main():
     mongo_setup.global_init('pypi')
+
+    # td = TestDownload()
+    # td.client = 'pip3'
+    # td.version = '3.7'
+    #
+    # td.things.append(TestThing(name="Thing 1", size=7))
+    # td.things.append(TestThing(name="Thing 2", size=5))
+    #
+    # td.save()
+
     print_header()
     input_loop()
 
