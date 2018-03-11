@@ -26,6 +26,7 @@ class ReleaseHistory(mongoengine.Document):
             'topics',
             'programming_languages',
             'health.ci',
+            'health.coverage',
         ],
         'ordering': ['-version_number']
     }

@@ -20,6 +20,7 @@ def main():
     # td.save()
 
     print_header()
+    print_covered()
     input_loop()
 
 
@@ -113,6 +114,14 @@ def print_header():
     print(f"Users: {PackageService.user_count():,}")
     print(f"Downloads: {PackageService.download_count():,}")
     print()
+
+
+def print_covered():
+    t0 = time.time()
+    releases = PackageService.covered_releases(.999)
+    counter = len(releases)
+    t1 = time.time()
+    print(counter, (t1-t0)*1000, 'ms')
 
 
 if __name__ == '__main__':

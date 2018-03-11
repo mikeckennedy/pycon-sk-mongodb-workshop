@@ -23,11 +23,21 @@ class PackageService:
 
     @classmethod
     def popular_packages(cls, limit: int):
-        return []
+        packages = Package.objects()\
+            .order_by('-total_downloads')\
+            .limit(limit)\
+            .all()
+
+        return list(packages)
 
     @classmethod
     def maintainers(cls, package):
-        return []
+        return User.objects(id__in=package.maintainers)
+
+    @classmethod
+    def covered_releases(cls, ratio_covered:float):
+        return ReleaseHistory\
+            .objects(health__coverage__gte=ratio_covered)
 
     @classmethod
     def find_package_by_name(cls, name):
