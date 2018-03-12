@@ -10,9 +10,8 @@ Recommended version is via the MSI installer
     * `c:\mongodb\logs`
     * `c:\mongodb\configs`
 * Copy configs: [win.config](win.config)
-* Test configs
-* `mongod --config c:\mongodb\configs\mongo-cmd.config`
-* Install as windows service (ADMIN cmd)
+* Run via CDM with: `mongod --config c:\mongodb\configs\mongo-cmd.config`
+* Install as windows service (**ADMIN cmd!!**) with
 `"C:\Program Files\MongoDB\Server\3.6\bin\mongod.exe" --config C:\mongodb\config\mongo-service.config --install`
 * Change service startup mode to manual?
 
