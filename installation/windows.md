@@ -9,7 +9,7 @@ Recommended version is via the MSI installer
     * `c:\mongodb\data` 
     * `c:\mongodb\logs`
     * `c:\mongodb\configs`
-* Copy configs: [../win.config](../win.config)
+* Copy configs: [win.config](win.config)
 * Test configs
 * `mongod --config c:\mongodb\configs\mongo-cmd.config`
 * Install as windows service (ADMIN cmd)
